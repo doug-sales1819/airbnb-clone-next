@@ -4,7 +4,7 @@ import { Nunito } from "next/font/google";
 
 import Navbar from "./components/Navbar";
 import ClientOnly from "./components/ClientOnly";
-import Modal from "./components/Modal";
+import RegisterModal from "./components/Modal/RegisterModal";
 
 const font = Nunito({
   subsets: ["latin"],
@@ -20,7 +20,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="pt-BR">
       <body className={font.className}>
         <ClientOnly>
-          <Modal isOpen={true} title="Login" actionLabel="Submit" />
+          <RegisterModal />
           <Navbar />
         </ClientOnly>
         {children}

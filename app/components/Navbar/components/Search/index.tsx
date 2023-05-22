@@ -37,6 +37,7 @@ const Search = () => {
         <div
           className="
           hidden 
+          text-sm
           sm:block
           font-semibold
           px-6
@@ -59,7 +60,7 @@ const Search = () => {
           gap-3
         "
         >
-          <div className="hidden sm:block">Add Guests?</div>
+          <div className="hidden sm:block">Guests?</div>
           <div className="p-2 bg-rose-500 rounded-full text-white">
             <BiSearch size={18} />
           </div>

@@ -2,7 +2,8 @@
   "cSpell.words": [
     "airbnb",
     "esnext",
-    "tailwindcss"
+    "tailwindcss",
+    "zustand"
   ],
   "prettier.bracketSpacing": true,
   "prettier.singleQuote": true,

@@ -60,13 +60,13 @@ const Modal: React.FC<ModalProps> = ({
         justify-center
         items-center
         overflow-x-hidden
-        overflow-y-auto
+        overflow-y-hidden
         fixed
         inset-0
         z-50
         outline-none
         focus:outline-none
-        bg-neutral-800/70
+        bg-neutral-600/60
         "
       >
         <div
@@ -74,8 +74,8 @@ const Modal: React.FC<ModalProps> = ({
           relative
           w-full
           md:w-4/6
-          lg:w-3/6
-          xl:w-2/5
+          lg:w-3/
+          xl:w-2/6
           my-6
           mx-auto
           h-full
@@ -136,7 +136,7 @@ const Modal: React.FC<ModalProps> = ({
                 >
                   <IoMdClose size={18} />
                 </button>
-                <div className="tex-lg font-semibold">{title}</div>
+                <div className="text-lg font-bold">{title}</div>
               </div>
               {/* BODY */}
               <div className="relative p-6 flex-auto">{body}</div>

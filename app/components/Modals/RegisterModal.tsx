@@ -3,12 +3,15 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
 
-import Modal from "./BaseModal";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 import useRegisterModal from "~/hooks/useRegisterModal";
+import BaseModal from "./BaseModal";
+import Heading from "../Heading";
+import Input from "../Input";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -35,21 +38,53 @@ const RegisterModal = () => {
         registerModal.onClose();
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Something went wrong.");
       })
       .finally(() => {
         setIsLoading(false);
       });
   };
 
+  const bodyContent = (
+    <div className="flex flex-col gap-4">
+      <Heading title="Welcome To Airbnb" subtitle="Create an Account" />
+      <Input
+        id="email"
+        label="Email"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Input
+        id="name"
+        label="Name"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+      <Input
+        id="password"
+        label="Password"
+        type="password"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
+    </div>
+  );
+
   return (
-    <Modal
+    <BaseModal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
-      title="Register"
+      title="Log in or register"
       actionLabel="Continue"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
+      body={bodyContent}
     />
   );
 };
